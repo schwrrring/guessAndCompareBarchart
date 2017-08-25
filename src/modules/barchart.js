@@ -21,21 +21,21 @@ export function draw(data) {
 
   console.log(data);
 
-  x.domain(data.bars.map(function (d) {
+  x.domain(data.map(function (d) {
     return d.area;
   }));
-  y.domain([0, d3.max(data.bars, function (d) {
+  y.domain([0, d3.max(data, function (d) {
     return d.value;
     })]);
     //
   barchart.append("g")
     .attr("class", "axis axis--x")
     .attr("transform", "translate(0," + height + ")")
-    .call(axisBottom(x));
+    .call(d3.axisBottom(x));
 
   barchart.append("g")
     .attr("class", "axis axis--y")
-    .call(axisLeft(y).ticks(5).tickFormat(function (d) {
+    .call(d3.axisLeft(y).ticks(6).tickFormat(function (d) {
        return parseInt(d / 1000) + "K";
     }).tickSizeInner([-width]))
       .append("text")
@@ -47,7 +47,7 @@ export function draw(data) {
       .text("Average House Price - (£)");
 
   barchart.selectAll(".bar")
-    .data(data.bars)
+    .data(data)
     .enter().append("rect")
     .attr("x", function (d) {
       return x(d.area);
