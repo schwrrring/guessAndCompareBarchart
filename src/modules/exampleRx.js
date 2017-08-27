@@ -13,7 +13,7 @@ export function drawableRect(queryString){
   const mousemove = 	Rx.Observable
 		  .fromEvent(document, 'mousemove');
   const mouseup = 	Rx.Observable
-		  .fromEvent(d3.select(queryString).node(), 'mouseup');
+		  .fromEvent(document, 'mouseup');
 
   Rx.Observable
 		  .fromEvent(d3.select(queryString).node(), 'mousedown')
