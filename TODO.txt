@@ -1,1 +1,2 @@
-1 prevent attr('y',...) from getting assigned negative values
+1 if user changes barheigt alot, adust height of other bar and scale up legend
+2 prevent attr('y',...) from getting assigned negative values
