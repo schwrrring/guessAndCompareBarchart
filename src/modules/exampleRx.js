@@ -24,12 +24,16 @@ export function drawableRect(queryString){
     .do( x => console.log(x ,'screenY'))
     .pairwise()
     .do( x => console.log(x ,'paiwise'))
-    .map(([a,b]) =>  b -a )
+    .map(([a,b]) =>  a - b )
     .do( x => console.log(x ,'diff'))
     .takeUntil(mouseup)
     .repeat()	
-    .subscribe( x =>	{ d3.select(queryString).attr('height', parseInt(d3.select(queryString).attr('height')) + parseInt(x));}
-    );
+    .subscribe( x =>	{ 
+      d3.select(queryString)
+        .attr('height', parseInt(d3.select(queryString).attr('height')) + parseInt(x))
+	    	.attr('y', parseInt(d3.select(queryString).attr('y')) - parseInt(x));
+
+    });
 }
 
 export const example = Rx.Observable.of(1,2,3);

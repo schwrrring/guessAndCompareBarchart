@@ -61,7 +61,7 @@ export function draw(data) {
     .attr('fill', function (d) {
       return colours(d.area);
     })
-    .attr('id', function (d,i,n ) { console.log(d,i,n); if (i == n.length - 1){return '#last';} });
+    .attr('id', function (d,i,n ) { console.log(d,i,n); if (i == n.length - 1){return 'last';} });
   //   .on('click', function() {});
    
 

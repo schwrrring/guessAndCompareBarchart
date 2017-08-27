@@ -8,11 +8,10 @@ document.write(
 );
 console.log('hello lovely');
 
-drawableRect('#last');
-
 d3.csv('../data/Bars.csv', function(data){
   draw(data);
   //console.log(data, 'data');
+  drawableRect('#last');
 });
 //const test = Rx.Observable.of(1,2,3, 4,5);
 //test.subscribe(x=> console.log(x));
