@@ -1,0 +1,1 @@
+1 prevent attr('y',...) from getting assigned negative values
