@@ -1,4 +1,10 @@
 
+1. drei rects
+2. rects lassen sich horizontal verschieben.
+3. rects lassen sich in ihrer laenge veraendern
+
+
+
 3 prevent attr('y',...) from getting assigned negative values
 4 if user changes barheigt alot, adust height of other bar and scale up legend
 
