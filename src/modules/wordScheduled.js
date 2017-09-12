@@ -2,7 +2,7 @@ import * as Rx from 'rxjs-es/Rx';
 import * as d3 from 'd3';
 
 export function writeScheduledWords (svgElement){
-    console.log(svgElement, 'svgElement');
+    //console.log(svgElement, 'svgElement');
     const textData = [
         {
 	  timeToFire: 1000,
@@ -22,9 +22,10 @@ export function writeScheduledWords (svgElement){
     ];
     textData.forEach(x => x.svg = svgElement);			
 
-    console.log(textData, 'textData');
+    //console.log(textData, 'textData');
+    //
     function addText (word, svg, x, y, font, size, fill){
-        console.log(svg,'svg');
+        //console.log(svg,'svg');
         const text =  svg
  		.append('text');
         text
@@ -49,9 +50,9 @@ export function writeScheduledWords (svgElement){
     //	const audio =  textScheduledStream( x => // TO DO play AUDIO ) 		
   
     textScheduledStream
-        .do(x => console.log(x, 'do'))
+    //      .do(x => console.log(x, 'do'))
         .subscribe( x => {
-            console.log(x, 'das ist x');
+        //    console.log(x, 'das ist x');
             //   x.data.svg.append('rect');
             x.fn(x.data.word, x.data.svg, x.data.x, x.data.y, x.data.font, x.data.size, x.data.fill);
         });	
