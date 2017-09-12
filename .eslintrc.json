@@ -11,9 +11,11 @@
     "sourceType": "module"
   },
   "rules": {
+		"no-console": 0,
+		"no-mixed-spaces-and-tabs": 0, 			
     "indent": [
       "error",
-      2
+      4
     ],
     "linebreak-style": [
       "error",
