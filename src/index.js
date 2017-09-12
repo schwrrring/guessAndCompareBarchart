@@ -15,8 +15,6 @@ const svg = d3.select('body')
   .attr('height','1000px');
 writeScheduledWords(svg);
 
-
-
 d3.csv('../data/Bars.csv', function(data){
 
   draw(data);

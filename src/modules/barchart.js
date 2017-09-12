@@ -1,31 +1,33 @@
 import * as d3 from 'd3';
 export function draw(data) {
   // The draw function is called when the template first loads
-  var width = window.innerWidth,
+  // reads the dom
+	var width = window.innerWidth,
     height = window.innerHeight;
+	// writes to the dom:			
   var svg = d3.select(document.body).append('svg').attr('width', width).attr('height', height),
     margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = +svg.attr('width') - margin.left - margin.right,
     height = +svg.attr('height') - margin.top - margin.bottom;
 
   var tooltip = d3.select('body').append('div').attr('class', 'toolTip');
-
+  //--read
+  // pure funtion: 
   var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
     y = d3.scaleLinear().rangeRound([height, 0]);
-
   var colours = d3.scaleOrdinal()
     .range(['#6F257F', '#CA0D59']);
-  var barchart = svg.append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-  console.log(data);
-
-  x.domain(data.map(function (d) {
+	x.domain(data.map(function (d) {
     return d.area;
   }));
   y.domain([0, d3.max(data, function (d) {
 	  return d.value;
   })]);
+			
+	//-- pure			
+	//-- writes to dom:
+  var barchart = svg.append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
   //
   barchart.append('g')
     .attr('class', 'axis axis--x') 
